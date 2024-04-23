@@ -1,0 +1,37 @@
+Creating table 1
+
+CREATE TABLE political_bonds (
+    Sr_No INT PRIMARY KEY,
+    Date_of_Encashment CHAR(11), 
+    Name_of_the_Political_Party VARCHAR(255), 
+    Account_no_of_Political_Party VARCHAR(20), 
+    Prefix CHAR(2), -- Adjust length if prefixes are longer
+    Bond_Number INT, 
+    Denominations VARCHAR(15), 
+    Pay_Branch_Code INT, 
+    Pay_Teller INT 
+);
+
+To give permission
+
+DROP USER 'root'@'localhost' IDENTIFIED BY 'SapphirE IS_liT27' FROM mysql.user;
+CREATE USER 'root'@'%localhost' IDENTIFIED WITH mysql_native_password BY 'SapphirE IS_liT27';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+Creating table 2
+
+CREATE TABLE ind_and_comp_bonds (
+    Sr_No INT PRIMARY KEY,
+    Reference_No CHAR(23),
+    Journal_Date CHAR(11), 
+    Date_of_Purchase CHAR(11), 
+    Date_of_Expiry CHAR(11), 
+    Name_of_the_Purchaser VARCHAR(255), 
+    Prefix CHAR(2),
+    Bond_Number INT, 
+    Denominations VARCHAR(15),
+    Issue_Branch_Code INT,
+    Issue_Teller INT,
+    Status CHAR(7)
+);

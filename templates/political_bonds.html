@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/political_bonds.css') }}"
+/>
+<script src="{{ url_for('static', filename='js/tablesort.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tablesort.number.js') }}"></script>
+<script src="{{ url_for('static', filename='js/political_bonds_sort.js') }}"></script>
+<h1>Explore Political Electoral Bonds Here</h1>
+<div class="bond_search">
+    <form action="/political_bonds" method="POST">
+        <input type="text" name="query" placeholder="Search by bond number:" />
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div class="container">
+    <h1>Political Bonds</h1>
+    <table class="table table-striped" id="bondsTable">
+        <thead>
+            <tr>
+                <th data-sort="int">Sr No</th>
+                <th data-sort="string">Date of Encashment</th>
+                <th data-sort="string">Name of the Political Party</th>
+                <th data-sort="string">Account no of Political Party</th>
+                <th data-sort="string">Prefix</th>
+                <th data-sort="int">Bond Number</th>
+                <th data-sort="string">Denominations</th>
+                <th data-sort="int">Pay Branch Code</th>
+                <th data-sort="int">Pay Teller</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

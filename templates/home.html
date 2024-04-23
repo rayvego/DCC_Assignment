@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<div class="home">
+<h1>ES113 - DCC:  Assignment 4</h1>
+
+<div class="name">
+    <h5>Mohit Kamlesh Panchal</h5>
+    <h5>23110208</h5>
+</div>
+
+<div class="main">
+    <form action="/political_bonds", method="GET">
+        <button type="submit" class="btn btn-primary" onclick>Explore SBI Electoral Bonds for Political Parties</button>
+    </form>
+    <form action="/individual_and_companies">
+        <button type="submit" class="btn btn-primary">Explore SBI Electoral Bonds for Individuals and Companies</button>
+    </form>
+</div>
+</div>
+{% endblock %}

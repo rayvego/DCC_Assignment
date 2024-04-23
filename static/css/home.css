@@ -1,0 +1,27 @@
+h1 {
+    padding-top: 1rem;
+    color: white;
+}
+
+.name {
+    color: white;
+    padding: 1rem;
+}
+
+.main {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+body {
+    background-image: url('/static/images/sbi.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    margin: 0;
+    height: 100vh;
+}
